@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         const todoItem = document.createElement('li')
         todoItem.innerHTML = `
+            <input type="checkbox" class="done-checkbox">
             <input type="text" class="todo-text" value="${todoText}" readOnly />
             <span class="edit-btn">Edit</span>
             <span class="delete-btn">Delete</span>
@@ -42,6 +43,13 @@ document.addEventListener('DOMContentLoaded', function(){
         }else if(target.classList.contains('delete-btn')){
             todoItem.remove();
         }
-    })
+    });
+
+    todoList.addEventListener('change', function (e) {
+        if (e.target.classList.contains('done-checkbox')) {
+            const todoItem = e.target.parentElement;
+            todoItem.classList.toggle('completed');
+        }
+    });
 
 });

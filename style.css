@@ -70,3 +70,13 @@ li input[type="text"] {
 .delete-btn {
     color: #dc3545;
 }
+
+.completed .todo-text {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.completed .edit-btn {
+    color: gray;
+    cursor: default;
+}
